@@ -13,7 +13,7 @@ const char* token = "?????????:???????????????????????????????????";
 const char* chat_id = "?????????";
 
 const char* boundry = "<delimitador_conteudo>";
-const char* filenamePhoto = "/foto.jpg";
+const char* filenamePhoto = "/foto.jpg"; // Faça upload do arquivo no menu: Tools -> "ESP8266 Sketch Data Upload"
 
 WiFiClientSecure client; // client HTTPS
 
@@ -25,7 +25,7 @@ void setup() {
   initFileSystem();
 
   // Inicia conexão WIFI
-  initWifiConection();
+  initWifiConnection();
 
   // Lista arquivos do diretório
   listFilesDirectory();
@@ -49,7 +49,7 @@ void initFileSystem()
 }
 
 // Inicia conexão WIFI
-void initWifiConection()
+void initWifiConnection()
 {
   Serial.println();
   Serial.printf("Conectando na rede Wifi [%s]...\r\n", ssid);
@@ -209,7 +209,7 @@ void receiveDataFromTelegram()
       
       // Verifica se é o fim do cabelho HTTP
       if (line.length() == 0)
-        break;a
+        break;
     }
     
     // Recebe conteúdo da resposta (mensagem JSON)
